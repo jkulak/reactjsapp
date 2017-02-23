@@ -5,9 +5,9 @@ const SERVER_PORT = 3000;
 const express = require('express');
 const app = express();
 
-app.use('/static', express.static(__dirname + '/js'));
+app.use('/static', express.static(__dirname + '/web/js'));
 app.set('view engine', 'pug');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/web/views');
 
 app.get('*', (req, res) => {
     res.render('index');
