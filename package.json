@@ -1,0 +1,27 @@
+{
+  "name": "reactjs-app-boilerplate",
+  "version": "0.0.2",
+  "description": "Selection of tools and packages for building robust ReactJS application",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.1",
+    "pm2": "^2.3.0",
+    "pug": "^2.0.0-beta11"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/pm2 start --no-daemon process.json --env development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkulak/react-boilerplate.git"
+  },
+  "author": "Jakub Kułak <jakub.kulak@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkulak/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jkulak/react-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
