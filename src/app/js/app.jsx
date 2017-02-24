@@ -6,6 +6,8 @@ import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import DataElement from './components/DataElement.jsx';
 
+
+
 render(
     <div>
         <Navbar />

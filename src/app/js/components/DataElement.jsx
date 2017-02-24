@@ -15,7 +15,6 @@ class DataElement extends React.Component{
     }
 
     handleChange(event) {
-        console.log(event.target.value);
         this.setState({value: event.target.value});
     }
 
@@ -28,7 +27,7 @@ class DataElement extends React.Component{
 
     showElements() {
         let elementList = this.state.elements.map(n => {
-            return <li className="list-group-item">{n}</li>;
+            return <li key={n} className="list-group-item">{n}</li>;
         });
 
         return <ul className="list-group">{elementList}</ul>

@@ -1,13 +1,14 @@
 'use strict';
 
 const SERVER_PORT = 3000;
+const SRC_DIR = __dirname + '/..';
 
 const express = require('express');
 const app = express();
 
-app.use('/static', express.static(__dirname + '/web/js'));
+app.use('/static', express.static(SRC_DIR + '/web/js'));
 app.set('view engine', 'pug');
-app.set('views', __dirname + '/web/views');
+app.set('views', SRC_DIR + '/web/views');
 
 app.get('*', (req, res) => {
     res.render('index');

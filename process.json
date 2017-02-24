@@ -1,8 +1,8 @@
 {
     "apps" : [{
         "name"        : "nodejs-server-for-reactjsapp",
-        "script"      : "./src/server.js",
-        "watch": ["./src"],
+        "script"      : "./src/server/server.js",
+        "watch": ["./src/server"],
         "watch_options": {
             "usePolling": true,
             "followSymlinks": false
