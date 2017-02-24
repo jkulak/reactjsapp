@@ -1,6 +1,6 @@
 {
     "apps" : [{
-        "name"        : "reactjs-express-app",
+        "name"        : "nodejs-server-for-reactjsapp",
         "script"      : "./src/server.js",
         "watch": ["./src"],
         "watch_options": {

@@ -39,9 +39,3 @@ Depending on the server mode (`development` or `production`) it will serve files
 4.  Start watching `.css` and `.js` files for changes and rebuild when needed, for improved development experience `gulp watch`
 
 Gulp will start a [livereload](https://www.npmjs.com/package/gulp-livereload) server that will reload the website when you change the files. To use that functionality, container exposes port `35729` (default livereload's port) and you need to install a [livereload browser plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
-
-## Questions
-
-*Q: Why use Node.js to serve static files?*
-
-A: From performance perspective it would make sense to use Nginx, yes. Since it is a tiny game, and we already have Node.js installed (for the dev tools we use) - I though it would make things way more simple.
