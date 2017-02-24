@@ -5,7 +5,7 @@ import React from 'react';
 class Footer extends React.Component{
     render(){
         return (
-            <footer className="navbar navbar-fixed-bottom">
+            <footer className="navbar">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-5">

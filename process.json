@@ -2,7 +2,7 @@
     "apps" : [{
         "name"        : "nodejs-server-for-reactjsapp",
         "script"      : "./src/server/server.js",
-        "watch": ["./src/server"],
+        "watch": ["./src/server", "./src/web"],
         "watch_options": {
             "usePolling": true,
             "followSymlinks": false
