@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 class DataElement extends React.Component{

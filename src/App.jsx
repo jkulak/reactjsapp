@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 import Navbar from './Components/Navbar.jsx';
@@ -33,7 +31,7 @@ class App extends React.Component{
         return (
             <div>
                 <Navbar />
-                <h1>Welcome 😁! Better!</h1>
+                <h1>Welcome 😁</h1>
                 <Projects test="Hello World!"/>
                 <DataElement />
                 <Footer />
