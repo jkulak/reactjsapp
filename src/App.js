@@ -1,6 +1,7 @@
 import React from 'react';
 
 import uuid from 'uuid';
+import axios from 'axios';
 
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -8,16 +9,33 @@ import DataElement from './Components/DataElement';
 import Projects from './Components/Projects';
 import AddProject from './Components/AddProject';
 
+
 class App extends React.Component{
 
     constructor() {
         super();
         this.state = {
-            projects: []
+            projects: [],
+            todos: []
         }
     }
 
-    componentWillMount() {
+    getTodos() {
+
+        axios.get('https://jsonplaceholder.typicode.com/todos')
+            .then(function (response) {
+                this.setState({
+                    todos: response.data
+                }, () => {
+                    console.log(this.state);
+                })
+            }.bind(this))
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    getProjects() {
         this.setState({
             projects: [
                 {
@@ -37,6 +55,17 @@ class App extends React.Component{
                 }
             ]
         });
+    }
+
+    componentWillMount() {
+
+        // this.getTodos();
+        // this.getProjects();
+    }
+
+    componentDidMount() {
+        this.getTodos();
+        this.getProjects();
     }
 
     handleAddProject(project) {
