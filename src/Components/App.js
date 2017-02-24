@@ -3,27 +3,18 @@ import React from 'react';
 import uuid from 'uuid';
 import axios from 'axios';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import DataElement from './Components/DataElement';
-import Projects from './Components/Projects';
-import AddProject from './Components/AddProject';
-import UserList from './Components/UserList';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import DataElement from './DataElement';
+import Projects from './Projects';
+import AddProject from './AddProject';
+import UserList from './UserList';
 
-import {fetchUsers} from './Actions/UserActions';
+import { fetchUsers } from '../Redux/Actions/UserActions';
 
 class App extends React.Component{
-
-    // @connect(store => {
-    App = connect(
-        store => {
-            return {
-                users: store.users.users
-            }
-        }
-    )(App);
 
     constructor() {
         super();
@@ -136,4 +127,9 @@ class App extends React.Component{
     }
 }
 
-export default App;
+export default connect(
+    store => {
+        return {
+            users: store.users.users
+        }
+    })(App);
