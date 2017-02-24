@@ -3,21 +3,57 @@ import React from 'react';
 import uuid from 'uuid';
 import axios from 'axios';
 
+import {connect} from 'react-redux';
+
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import DataElement from './Components/DataElement';
 import Projects from './Components/Projects';
 import AddProject from './Components/AddProject';
+import UserList from './Components/UserList';
 
+import {fetchUsers} from './Actions/UserActions';
 
 class App extends React.Component{
+
+    // @connect(store => {
+    App = connect(
+        store => {
+            return {
+                users: store.users.users
+            }
+        }
+    )(App);
 
     constructor() {
         super();
         this.state = {
             projects: [],
-            todos: []
+            todos: [],
+            users: []
         }
+    }
+
+    getUsers() {
+        this.setState({
+            users: [
+                {
+                    id: uuid.v4(),
+                    title: "First title",
+                    category: "Funny"
+                },
+                {
+                    id: uuid.v4(),
+                    title: "All about them",
+                    category: "Sad"
+                },
+                {
+                    id: uuid.v4(),
+                    title: "There was a bridge",
+                    category: "Architecture"
+                }
+            ]
+        });
     }
 
     getTodos() {
@@ -59,6 +95,8 @@ class App extends React.Component{
 
     componentWillMount() {
 
+        this.props.dispatch(fetchUsers());
+
         // this.getTodos();
         // this.getProjects();
     }
@@ -66,6 +104,7 @@ class App extends React.Component{
     componentDidMount() {
         this.getTodos();
         this.getProjects();
+        this.getUsers();
     }
 
     handleAddProject(project) {
@@ -82,10 +121,12 @@ class App extends React.Component{
     }
 
     render() {
+        // this.props.users;
         return (
             <div>
                 <Navbar />
                 <h1>Welcome 😁</h1>
+                <UserList users={this.props.users} />
                 <AddProject addProject={this.handleAddProject.bind(this)} />
                 <Projects onDelete={this.handleDeleteProject.bind(this)} projects={this.state.projects} />
                 <DataElement />
