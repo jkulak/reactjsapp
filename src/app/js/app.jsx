@@ -8,11 +8,32 @@ import DataElement from './Components/DataElement.jsx';
 import Projects from './Components/Projects.jsx';
 
 class App extends React.Component{
+
+    constructor() {
+        super();
+        this.state = {
+            projects: [
+                {
+                    title: "First title",
+                    category: "Funny"
+                },
+                {
+                    title: "All about them",
+                    category: "Sad"
+                },
+                {
+                    title: "There was a bridge",
+                    category: "Architecture"
+                }
+            ]
+        }
+    }
+
     render() {
         return (
             <div>
                 <Navbar />
-                <h1>Welcome 😁! Better! Will that work???</h1>
+                <h1>Welcome 😁! Better!</h1>
                 <Projects test="Hello World!"/>
                 <DataElement />
                 <Footer />
