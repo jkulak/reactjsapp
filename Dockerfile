@@ -1,7 +1,5 @@
 FROM mhart/alpine-node:7.4
 
-# EXPOSE 8044
-
 RUN mkdir /app
 WORKDIR /app
 ENV NODE_ENV development
@@ -10,7 +8,6 @@ COPY package.json /app
 RUN npm install --production
 
 COPY . /app
-# RUN node_modules/.bin/gulp build-for-production
 
 # Add shell aliases
 RUN echo 'alias l="ls -la"' >> /etc/profile
